@@ -54,8 +54,7 @@ class Song
   end
   
   def self.new_from_filename(filename)
-    @useful = nil
-    @useful << song = Song.new
+    song = Song.new
     change = filename.split(" - ")
     change[1] = change[1].chomp(".mp3")
     song.name = change[1]
@@ -65,13 +64,11 @@ class Song
   end
   
   def self.create_from_filename(filename)
-    #song = Song.new
-    #change = filename.split(" - ")
-    #change[1] = change[1].chomp(".mp3")
-    #song.name = change[1]
+    song = Song.new
+    change = filename.split(" - ")
+    change[1] = change[1].chomp(".mp3")
+    song.name = change[1]
     #song.artist_name = change[0]
-    self.new_from_filename(filename)
-    self.all << @useful
     #song
   end
 end
