@@ -68,7 +68,7 @@ class Song
     change = filename.split(" - ")
     change[1] = change[1].chomp(".mp3")
     song.name = change[1]
-    #song.artist_name = change[0]
-    #song
+    song.artist_name = change[0]
+    self.all << song
   end
 end
