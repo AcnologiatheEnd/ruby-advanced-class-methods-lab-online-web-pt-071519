@@ -54,12 +54,13 @@ class Song
   end
   
   def self.new_from_filename(filename)
-    @song = Song.new
+    @useful = nil
+    @useful << song = Song.new
     change = filename.split(" - ")
     change[1] = change[1].chomp(".mp3")
     song.name = change[1]
     song.artist_name = change[0]
-    @song
+    song
     
   end
   
@@ -70,7 +71,7 @@ class Song
     #song.name = change[1]
     #song.artist_name = change[0]
     self.new_from_filename(filename)
-    self.all << song
+    self.all << @useful
     #song
   end
 end
